@@ -75,11 +75,14 @@ const HomeComponent = () => {
 										</Button>
 									</Form.Item>
 								</Form>
-								<h5 className='mt-4'>
-									{" "}
-									Your Link :{" "}
-									<a href={`${currentUrl}${data}`}>{`${currentUrl}${data}`}</a>
-								</h5>
+								{data && (
+									<h5 className='mt-4'>
+										{" "}
+										Your Link :{" "}
+										<a
+											href={`${currentUrl}${data}`}>{`${currentUrl}${data}`}</a>
+									</h5>
+								)}
 							</div>
 						</div>
 					</div>
