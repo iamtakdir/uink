@@ -17,6 +17,7 @@ const HomeComponent = () => {
 
 	const onFinishFailed = (errorInfo) => {
 		console.log("Failed:", errorInfo);
+		setLoading(false);
 	};
 
 	console.log(data);
