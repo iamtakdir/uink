@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 const Redirect = () => {
@@ -14,6 +14,7 @@ const Redirect = () => {
 				headers: {
 					Accept: "application/json",
 					"Content-Type": "application/json;charset=UTF-8",
+					"Access-Control-Allow-Origin": "https://uink.xyz",
 				},
 			});
 
@@ -21,9 +22,15 @@ const Redirect = () => {
 		})(id);
 
 		if (url.indexOf("http://") == 0 || url.indexOf("https://") == 0) {
-			window.location.replace(`${url}`);
+			// window.location.replace(`${url}`);
+			setTimeout(() => {
+				return <Navigate to={url} replace='true' />;
+			}, 5000);
 		} else {
-			window.location.replace(`https://${url}`);
+			// window.location.replace(`https://${url}`);
+			setTimeout(() => {
+				<Navigate to={`https://${url}`} replace='true' />;
+			}, 5000);
 		}
 	} catch (error) {
 		console.log(error);

@@ -10,8 +10,8 @@ function App() {
 		<div className='App'>
 			<BrowserRouter>
 				<Routes>
-					<Route path='/' element={<HomeComponent />} />
-					<Route path='/:id' element={<Redirect />} />
+					<Route path='/' exact element={<HomeComponent />} />
+					<Route path='/:id' exact element={<Redirect />} />
 				</Routes>
 			</BrowserRouter>
 		</div>
